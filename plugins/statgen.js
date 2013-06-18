@@ -25,14 +25,14 @@ module.exports = function (irc) {
 
 
                 /*-------------------------------------------------
-                Ex - !statgen
+                Ex - .statgen
                 This switch has three roll types, each resulting in
                 a block of stats for a character in a d20 RPG:
                 - 2d6+6: rolls two six sided dice + 6 (7-18)
                 - 3d6: rolls three dice (3-18)
                 - 4d6dl: rolls four dice and drops lowest (3-18)
 
-                OPTIONAL: !statgen verbose
+                OPTIONAL: .statgen verbose
                 - verbose prints out each roll individually
                 -------------------------------------------------*/
                 switch (statgen[0]) {
