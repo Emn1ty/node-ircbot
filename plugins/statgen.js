@@ -19,7 +19,7 @@ module.exports = function (irc) {
                 var statgen = message.replace('.'+trigger,'').split(" ");
 
                 // If verbose is set, print out starting text to client.
-                if (statgen[1] == 'verbose') {
+                if (statgen.length > 1 && statgen[1] == 'verbose') {
                   irc.say(to, 'Sat block for ' + from + ':');
                 }
 
@@ -47,7 +47,7 @@ module.exports = function (irc) {
                             rolls.push(roll);
                             score += roll;
                           }
-                          if (statgen[1] == 'verbose') {
+                          if (statgen.length > 1 && statgen[1] == 'verbose') {
                             irc.say(to, rolls.sort().reverse() + ' + 6 = ' + sum);
                           }
                           slim.push(score);
@@ -65,7 +65,7 @@ module.exports = function (irc) {
                             rolls.push(roll);
                             score += roll;
                           }
-                          if (statgen[1] == 'verbose') {
+                          if (statgen.length > 1 && statgen[1] == 'verbose') {
                             irc.say(to, rolls.sort().reverse() + ' = ' + sum);
                           }
                           slim.push(score);
@@ -91,7 +91,7 @@ module.exports = function (irc) {
 
                           slim.push(score);
 
-                          if (statgen[1] == 'verbose') {
+                          if (statgen.length > 1 && statgen[1] == 'verbose') {
                             irc.say(to, + rolls + ' drop [' + dropped + '] = ' + score);
                           }
                         }
